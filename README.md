@@ -1,4 +1,6 @@
 # pi-weather
 Raspberry PI weather station for the Geography Department of Chowgule College.
- 
-<p>Co-Contributor: @ShadowRBlade</p>
+
+Use:
+	wget https://raw.githubusercontent.com/lx5321/pi-weather/master/weather.py
+
