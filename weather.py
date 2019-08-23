@@ -1,3 +1,5 @@
+# raindrop sensor DO connected to GPIO18
+# HIGH = no rain, LOW = rain detected
 # essential os operations
 import os
 # timing library
@@ -30,3 +32,15 @@ while True:
         print("Failed to retrieve data from humidity sensor")
 
     time.sleep(30)       
+
+##########################
+#  rainwater sensor test #
+##########################
+     
+no_rain = InputDevice(18)
+while True:
+    if not no_rain.is_active:
+        print("It's raining!")
+        # insert other code or functions here
+        # e.g. tweet, SMS, email, take a photo etc.
+    sleep(1)
