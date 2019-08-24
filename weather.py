@@ -14,6 +14,7 @@ DHT_PIN = 4
 
 try:
 #     open file in append mode
+#     Write to DB instead of CSV on local machine.  
     f = open('/home/pi/humidity.csv', 'a+')
     if os.stat('/home/pi/humidity.csv').st_size == 0:
             f.write('Date,Time,Temperature,Humidity\r\n')
@@ -31,16 +32,14 @@ while True:
 #       error
         print("Failed to retrieve data from humidity sensor")
 
-    time.sleep(30)       
-
 ##########################
 #  rainwater sensor test #
 ##########################
      
-no_rain = InputDevice(18)
-while True:
+    no_rain = InputDevice(18)
     if not no_rain.is_active:
         print("It's raining!")
         # insert other code or functions here
         # e.g. tweet, SMS, email, take a photo etc.
-    sleep(1)
+
+    time.sleep(30)       
