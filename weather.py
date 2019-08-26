@@ -1,9 +1,12 @@
 # raindrop sensor DO connected to GPIO18
 # HIGH = no rain, LOW = rain detected
+
 # essential os operations
 import os
+
 # timing library
 import time
+
 # DHT22 Library
 import Adafruit_DHT
 
@@ -29,7 +32,7 @@ while True:
     if humidity is not None and temperature is not None:
         f.write('{0},{1},{2:0.1f}*C,{3:0.1f}%\r\n'.format(time.strftime('%m/%d/%y'), time.strftime('%H:%M'), temperature, humidity))
     else:
-#       error
+#       throw error
         print("Failed to retrieve data from humidity sensor")
 
 ##########################
@@ -39,7 +42,8 @@ while True:
     no_rain = InputDevice(18)
     if not no_rain.is_active:
         print("It's raining!")
+        #
         # insert other code or functions here
         # e.g. tweet, SMS, email, take a photo etc.
-
-    time.sleep(30)       
+        #
+    time.sleep(30)  # record after 30 seconds interval     
